@@ -1,10 +1,10 @@
+//@mtbstn24
+
 #include <iostream>
 #include <cstdlib>
 using namespace std;
 
-int main() {
-    // Write C++ code here
-	
+int main() {	
 	char *a = (char *)malloc(sizeof(char)*3);
 	a[0] = 'e';
 	a[1] = 'f';
@@ -13,7 +13,8 @@ int main() {
 	int a_length = sizeof(a)/sizeof(char);
 	a_length = 3;
 	int final_length = 0;
-	
+
+	cout<<"The original char array: "<<endl;
 	for(int i=0; i<a_length; i++){
 	    cout<<a[i];
 	}
@@ -27,15 +28,6 @@ int main() {
 	
 	a = (char *)realloc(a, final_length*sizeof(char));
 	
-// 	int current_pos = final_length;
-// 	for(int i=a_length; i>0; i--){
-// 	    char x = a[i-1];
-// 	    for(int j=current_pos; j>current_pos-i; j--){
-// 	        a[j-1] = x;
-// 	    }
-// 	    current_pos-=i;
-// 	}
-
 	int i=0;
 	int length=a_length;
 	int alpha_pos = 0;
@@ -52,11 +44,12 @@ int main() {
 	    }
 	    i = i + alpha_pos;
 	}
-	
+
+	cout<<"Replaced array: "<<endl;
 	for(int i=0; i<final_length; i++){
 	    cout<<a[i];
 	}
+	cout<<endl;
 
-
-    return 0;
+    	return 0;
 }
